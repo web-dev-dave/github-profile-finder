@@ -17,8 +17,9 @@ searchBar.addEventListener('keyup', (e) => {
     // Make http call
     github.getUser(searchText)
     .then(user => {
-      if(user.profile.message === 'Not Found') {
+      if(user.profile.message) {
         // Show alert
+        ui.showAlert('User not found', 'alert alert-danger')
       } else {
         // Show profile
         ui.showProfile(user.profile)
