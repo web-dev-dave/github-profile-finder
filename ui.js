@@ -5,7 +5,6 @@ class UI {
 
   // Show profile
   showProfile(user) {
-    console.log(user)
     this.profile.innerHTML = `
     <div class="card card-body mb-3">
       <div class="row">
