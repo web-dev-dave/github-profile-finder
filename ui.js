@@ -35,6 +35,8 @@ class UI {
 
   // Show alert message
   showAlert(msg, className) {
+    // Clear any remaining alerts
+    this.clearAlert()
     // Create div
     const div = document.createElement('div')
     // Add class
@@ -44,15 +46,24 @@ class UI {
 
     // Get elements
     const container = document.querySelector('.searchContainer')
-    const search = document.querySelector('search')
+    const search = document.querySelector('.search')
 
     // Insert error above heading
     container.insertBefore(div, search)
 
     // Set timeout
     setTimeout(() => {
-      document.querySelector('.alert').remove()
+      this.clearAlert()
     }, 3000)
+  }
+
+  // Clear alert message
+  clearAlert() {
+    const currentAlert = document.querySelector('.alert')
+
+    if(currentAlert) {
+      currentAlert.remove()
+    }
   }
 
 
