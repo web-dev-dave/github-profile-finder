@@ -17,12 +17,16 @@ searchBar.addEventListener('keyup', (e) => {
     // Make http call
     github.getUser(searchText)
     .then(user => {
-      if(user.message === 'Not Found') {
+      if(user.profile.message === 'Not Found') {
         // Show alert
         ui.showAlert('User not found', 'alert alert-danger')
+        console.log(user.profile)
       } else {
+        console.log(user)
         // Show profile
         ui.showProfile(user.profile)
+        // Show repos
+        ui.showRepos(user.repos)
       }
     })
     .catch(error => {
