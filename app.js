@@ -20,9 +20,7 @@ searchBar.addEventListener('keyup', (e) => {
       if(user.profile.message === 'Not Found') {
         // Show alert
         ui.showAlert('User not found', 'alert alert-danger')
-        console.log(user.profile)
       } else {
-        console.log(user)
         // Show profile
         ui.showProfile(user.profile)
         // Show repos
